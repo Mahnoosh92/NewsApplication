@@ -4,8 +4,8 @@ import com.mahnoosh.data_store.NewsPreferencesDataSource
 import com.mahnoosh.model.DarkThemeConfig
 import com.mahnoosh.model.ThemeBrand
 import com.mahnoosh.model.UserData
-import jakarta.inject.Inject
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
 internal class OfflineFirstUserDataRepository @Inject constructor(val newsPreferencesDataSource: NewsPreferencesDataSource):UserDataRepository {
     override val userData: Flow<UserData>

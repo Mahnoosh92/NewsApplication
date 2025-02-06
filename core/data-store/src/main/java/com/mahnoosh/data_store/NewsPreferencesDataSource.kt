@@ -11,9 +11,9 @@ import com.mahnoosh.newsapplication.core.datastore.ThemeBrandProto
 import com.mahnoosh.newsapplication.core.datastore.UserPreferences
 import com.mahnoosh.newsapplication.core.datastore.UserPreferencesKt
 import com.mahnoosh.newsapplication.core.datastore.copy
-import jakarta.inject.Inject
 import kotlinx.coroutines.flow.map
 import java.io.IOException
+import javax.inject.Inject
 
 class NewsPreferencesDataSource @Inject constructor(private val userPreferences: DataStore<UserPreferences>) {
     val userData = userPreferences.data
@@ -155,7 +155,7 @@ class NewsPreferencesDataSource @Inject constructor(private val userPreferences:
         }
     }
 
-    suspend fun getChangeListVersions() = userPreferences.data.map {
+    fun getChangeListVersions() = userPreferences.data.map {
         ChangeListVersions(
             topicVersion = it.topicChangeListVersion,
             newsResourceVersion = it.newsResourceChangeListVersion,
